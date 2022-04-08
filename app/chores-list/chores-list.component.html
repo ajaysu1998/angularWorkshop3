@@ -1,0 +1,39 @@
+<div class="row">
+    
+    <div class="col bg-primary text-white border border-warning text center"><h2> Chores list</h2></div>
+  </div>
+  <div class="row">
+   
+    <div class="col   text-white border border-warning">
+  
+        <div class="container">
+            <input
+            type="text"
+            class="form-control bg bg-warning"
+            placeholder="Search..."
+            [(ngModel)]="filterTerm"
+          />
+           
+        </div>
+        <div class="container">
+            
+            <table class="table table-striped table-bordered">
+               
+                <thead>
+                   
+                    <tr>
+                       
+                        <th>id</th>
+                        <th>Today you have ot complete:{{ TodaysList.length }} tasks</th>
+        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let today of TodaysList | filter: filterTerm">
+                        <td>{{today.id}} </td>
+                        <td>{{today.mytask}}</td>
+        
+                    </tr>
+                </tbody>
+            </table>
+        </div>

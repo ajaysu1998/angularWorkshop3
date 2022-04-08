@@ -1,0 +1,54 @@
+
+ <div class="text-center">
+    <button type="button" class="btn btn-primary "(click)="sortByName()">Sort by Movie name</button>
+    &nbsp;
+    <button type="button" class="btn btn-warning"(click)="sortByDate()">Sort Release date</button>
+ </div>
+      
+
+<br />
+<h4 style="text-align: center">Search  By Movie name</h4>
+<input type="text" [(ngModel)]="movieSearch" style="margin-left: 42.5%" />
+    <h1 class="text-center bg bg-warning">List of the movie</h1>
+
+    <!-- | filter: filterTerm | convertToSpaces: '-' -->
+
+    <div class="row row-cols-1 row-cols-md-6 g-4">
+            <div class="col "*ngFor="let my of MyMovies | serachMovie: movieSearch  ">
+              <div class="card">
+                <img  [src]='my.image' class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Movie name: {{my.title }}</h5>
+                  <h4 class="card-text">Director: {{my.director}} </h4>
+                
+                  <h4 class="card-text">Release date: {{my.releaseDate }} </h4>
+                  <button type="button" class="btn btn-primary"   (click)="addtoWatchlist(my);">add into watchlist</button>
+                            
+                  <!-- <button class="btn btn-primary" (click)="toggleImage(employee)"> toggle the image</button> -->
+             </div>
+              </div>
+            </div>
+              </div>
+
+    <hr>
+    
+    <h1 class="text-center bg bg-success">My watchlist</h1>
+
+    <!-- | filter: filterTerm | convertToSpaces: '-' -->
+
+    <div class="row row-cols-1 row-cols-md-6 g-4">
+            <div class="col "*ngFor="let mylist of Watchlist  ">
+              <div class="card">
+                <img  [src]='mylist.image' class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Movie name: {{mylist.title }}</h5>
+                  <h4 class="card-text">Director name: {{mylist.director}} </h4>
+                
+                  <h4 class="card-text">Release date: {{mylist.rDate }} </h4>
+                            
+                  <button type="button" class="btn btn-primary" (click)="removeMovie(mylist)" >remove form watchlist</button>
+             </div>
+              </div>
+            </div>
+              </div>
+    

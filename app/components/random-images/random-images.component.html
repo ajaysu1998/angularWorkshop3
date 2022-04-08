@@ -1,0 +1,15 @@
+<h3>random-images </h3>
+<!-- <div>
+<img [src]="imageSrc1" class="img1">
+</div>
+<div ><img [src]="imageSrc2" class="img2">
+</div>
+<div ><img [src]="imageSrc3" class="img3">
+</div> -->
+<!-- {{imageList.img}} -->
+
+<div *ngFor="let list of imageList" >
+    <img [src]='list.img' style="width:60%; height: 150px; padding: 10px;"  />
+</div>
+
+

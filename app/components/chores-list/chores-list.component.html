@@ -1,0 +1,23 @@
+<h3>Yesterdays Chores</h3>
+<ul>
+  <li *ngFor="let chore of yesterday_chores">
+    {{ chore }}
+  </li>
+</ul>
+
+<h3>Todays Chores</h3>
+<ul>
+  <li *ngFor="let chore of todays_chores">
+    {{ chore }}
+  </li>
+</ul>
+
+<p *ngIf="checkForHarder()">Work Harder</p>
+<p *ngIf="checkForDone()">Well Done</p>
+
+<h3>Tommorrows Chores</h3>
+<ul>
+  <li *ngFor="let chore of tommorrows_chores">
+    {{ chore }}
+  </li>
+</ul>

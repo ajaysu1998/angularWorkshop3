@@ -1,0 +1,65 @@
+<h3>Movies To Watch</h3>
+<!-- <ul>
+  <li *ngFor="let movie of moviesToWatch">
+    {{ movie.id }}
+    {{ movie.name }}
+    {{ movie.date }}
+    {{ movie.image }}
+
+    <button (click)="add_to_watched_list(movie)">Add to watched list</button>
+  </li>
+</ul> -->
+<button (click)="sortByName()">Sort</button>
+
+<br />
+<h4 style="text-align: center">Search Movie</h4>
+<input type="text" [(ngModel)]="movieSearch" style="margin-left: 42.5%" />
+
+<div class="row">
+  <div
+    *ngFor="let movie of moviesToWatch | serachMovie: movieSearch"
+    class="col-sm-3 pt-2"
+  >
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Id : {{ movie.id }}</h5>
+        <h5 class="card-title">Name : {{ movie.name }}</h5>
+        <h5 class="card-title">Date : {{ movie.date }}</h5>
+        <h5 class="card-title">Director Name : {{ movie.directorName }}</h5>
+        <img
+          style="width: 200px; width: 200px"
+          src=" {{ movie.image }}"
+          class="card-img-top"
+          alt="..."
+        />
+        <br />
+        <br />
+        <button class="btn btn-primary" (click)="add_to_watched_list(movie)">
+          Add to watched list
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Watched Movies</h3>
+
+<div class="row">
+  <div *ngFor="let movie of watchedMovies" class="col-sm-3 pt-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Id : {{ movie.id }}</h5>
+        <h5 class="card-title">Name : {{ movie.name }}</h5>
+        <h5 class="card-title">Designation : {{ movie.date }}</h5>
+        <img
+          style="width: 200px; width: 200px"
+          src=" {{ movie.image }}"
+          class="card-img-top"
+          alt="..."
+        />
+        <br />
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
